@@ -158,7 +158,7 @@
       r.farm_steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') +
       '</ol></div></div>';
     document.getElementById('closeDetail').onclick = function () { box.hidden = true; box.innerHTML = ''; };
-    box.scrollIntoView({ block: 'start' });
+    box.scrollIntoView({ block: 'nearest' });
   }
 
   // Live-token reference table.
