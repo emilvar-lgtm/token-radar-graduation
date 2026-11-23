@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graduation Radar — which pre-token protocol issues a token next?</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark">G</div>
+    <div>
+      <h1>Graduation Radar</h1>
+      <p class="sub">Which pre-token protocol issues a token next — and what it would be worth if it did.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<main>
+  <section class="panel explainer">
+    <h2>How graduation is predicted</h2>
+    <p>Nothing in the snapshot says a token is coming. The model scores each protocol from the snapshot's own figures only: <strong>scale</strong> (TVL against the $50M floor), <strong>momentum</strong> (7-day TVL change), <strong>staying power</strong> (days listed with no token), and <strong>breadth</strong> (chains spanned). Those four signals feed a graduation probability; the implied value is TVL &times; 0.30 &times; (0.50 + probability), adjusted for growth, maturity and breadth. The window (3–6, 6–12, 12–18 or 18–24+ months) is a bucket of that probability, never a date. No protocol name is special-cased — the same function scores every row, and the detail view shows every input behind each number.</p>
+    <p class="caveat">A protocol on this board <em>records</em> no token. That is not proof it has none. Implied values are this entry's own claim, never make.fun's.</p>
+  </section>
+
+  <section class="panel controls">
+    <div class="row">
+      <label>Search <input id="q" type="search" placeholder="protocol, category or chain" autocomplete="off"></label>
+      <label>Tier
+        <select id="tier">
+          <option value="">All tiers</option>
+          <option value="soon">Graduating soon</option>
+          <option value="watch">On watch</option>
+          <option value="early">Early</option>
+        </select>
+      </label>
+      <label>Category <select id="cat"><option value="">All categories</option></select></label>
+      <label>Sort
+        <select id="sort">
+          <option value="rank">Rank (implied value)</option>
+          <option value="prob">Graduation probability</option>
+          <option value="tvl">TVL</option>
+          <option value="growth">7-day growth</option>
+          <option value="age">Age (days listed)</option>
+        </select>
+      </label>
+    </div>
+    <div class="chips" id="tierChips"></div>
+    <p class="count" id="count"></p>
+  </section>
+
+  <section class="panel detail" id="detail" hidden></section>
+
+  <section class="panel">
+    <table id="board">
+      <thead><tr>
+        <th>#</th><th>Protocol</th><th>Graduation</th><th>Window</th>
+        <th class="num">Implied value</th><th class="num">TVL</th><th class="num">7d</th><th>Chains</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="count" id="more"></p>
+  </section>
+
+  <section class="panel">
+    <h2>Already graduated — live tokens, for reference</h2>
+    <p class="muted">These protocols already trade. Their market cap is the market's own value, never a model's, so they are not ranked on the board — they are here so a reader can compare what a graduated token is actually worth.</p>
+    <table id="live">
+      <thead><tr><th>Protocol</th><th class="num">Market cap</th><th class="num">TVL</th><th class="num">7d</th></tr></thead>
+      <tbody id="liveRows"></tbody>
+    </table>
+  </section>
+
+  <footer class="panel foot">
+    <p>Snapshot as of <span id="asof"></span> · floor $50,000,000 · model <span id="modelv"></span> · <span id="src"></span></p>
+    <p class="muted">Farm plans are generic guidance, not financial advice. Never pay to claim an airdrop; claim only from a link the protocol itself publishes.</p>
+  </footer>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

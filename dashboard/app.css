@@ -1,0 +1,96 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #12181f;
+  --panel2: #171f28;
+  --line: #243040;
+  --text: #e8eef4;
+  --muted: #93a3b3;
+  --amber: #f5b942;
+  --amber-dim: #8a6a24;
+  --green: #3fce8f;
+  --red: #f26d6d;
+  --blue: #5ea8ef;
+  --violet: #a78bfa;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.top {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  justify-content: space-between; padding: 20px 24px 8px;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.mark {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: var(--amber); color: #171207;
+  font-size: 28px; font-weight: 800; line-height: 46px; text-align: center;
+}
+h1 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+.sub { margin: 2px 0 0; color: var(--muted); max-width: 560px; }
+.stats { display: flex; gap: 10px; flex-wrap: wrap; }
+.stat {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 8px 14px; min-width: 110px;
+}
+.stat b { display: block; font-size: 20px; color: var(--amber); }
+.stat span { color: var(--muted); font-size: 12px; }
+main { padding: 12px 24px 32px; display: grid; gap: 14px; max-width: 1180px; margin: 0 auto; }
+.panel {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+h2 { margin: 0 0 8px; font-size: 17px; }
+p { margin: 6px 0; }
+.muted, .caveat { color: var(--muted); font-size: 13px; }
+.caveat em { color: var(--amber); font-style: normal; }
+.controls .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+label { font-size: 12px; color: var(--muted); display: grid; gap: 4px; }
+input, select {
+  background: var(--panel2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 14px;
+}
+input { min-width: 220px; }
+.chips { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.chip {
+  border: 1px solid var(--line); background: var(--panel2); color: var(--text);
+  border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: 13px;
+}
+.chip[aria-pressed="true"] { border-color: var(--amber); color: var(--amber); }
+.count { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--panel2); }
+tbody tr.sel { background: #221d10; }
+.name { font-weight: 650; }
+.cat { color: var(--muted); font-size: 12px; }
+.tier { display: inline-block; border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 650; }
+.tier.soon { background: #3a2c07; color: var(--amber); }
+.tier.watch { background: #12283d; color: var(--blue); }
+.tier.early { background: #1d2230; color: var(--violet); }
+.prob { display: flex; align-items: center; gap: 8px; min-width: 130px; }
+.bar { flex: 1; height: 7px; border-radius: 999px; background: var(--panel2); overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--amber); border-radius: 999px; }
+.prob b { font-variant-numeric: tabular-nums; min-width: 38px; }
+.up { color: var(--green); } .down { color: var(--red); }
+.detail h2 { font-size: 20px; }
+.detail .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .detail .grid { grid-template-columns: 1fr; } }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13.5px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.sig { display: grid; gap: 6px; margin: 8px 0; }
+.sig div { display: grid; grid-template-columns: 130px 1fr 44px; gap: 8px; align-items: center; font-size: 13px; }
+.sig .bar { height: 8px; }
+.sig .bar i { background: var(--blue); }
+.steps { margin: 8px 0 0; padding-left: 20px; }
+.steps li { margin: 6px 0; }
+.steps li::marker { color: var(--amber); font-weight: 700; }
+.close { float: right; background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.foot { color: var(--muted); font-size: 13px; }
